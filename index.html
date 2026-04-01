@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perplexity Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-top">
+                <a href="#" class="nav-item active">
+                    <i class="fa-solid fa-magnifying-glass"></i> Search
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fa-solid fa-desktop"></i> Computer
+                </a>
+                
+                <button class="new-thread-btn">
+                    <i class="fa-solid fa-plus"></i> New thread
+                </button>
+                
+                <div class="nav-group">
+                    <a href="#" class="nav-item text-secondary"><i class="fa-solid fa-clock-rotate-left"></i> History</a>
+                    <a href="#" class="nav-item text-secondary"><i class="fa-regular fa-compass"></i> Discover</a>
+                    <a href="#" class="nav-item text-secondary"><i class="fa-solid fa-layer-group"></i> Spaces</a>
+                    <a href="#" class="nav-item text-secondary"><i class="fa-solid fa-arrow-trend-up"></i> Finance</a>
+                    <a href="#" class="nav-item text-secondary"><i class="fa-regular fa-heart"></i> Health</a>
+                    <a href="#" class="nav-item text-secondary"><i class="fa-solid fa-ellipsis"></i> More</a>
+                </div>
+
+                <div class="recent-section">
+                    <div class="recent-header">
+                        <span>Recent</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sidebar-bottom">
+                <a href="#" class="user-profile">
+                    <div class="avatar"><i class="fa-regular fa-user"></i></div>
+                    <span>Sign In</span>
+                </a>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="center-wrapper">
+                <h1 class="logo">perplexity</h1>
+                
+                <div class="search-container">
+                    <textarea id="user-input" placeholder="Ask anything..." rows="1"></textarea>
+                    
+                    <div class="search-actions">
+                        <div class="left-actions">
+                            <input type="file" id="file-input" accept=".pdf" style="display: none;">
+                            <button id="attach-btn" class="action-btn icon-btn" title="Attach"><i class="fa-solid fa-plus"></i></button>
+                            <div id="file-badge" class="file-badge" style="display: none;">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <span id="file-name"></span>
+                                <i id="remove-file" class="fa-solid fa-xmark"></i>
+                            </div>
+                            
+                            <div class="dropdown-wrapper">
+                                <button id="focus-btn" class="action-btn badge-btn">
+                                    <i class="fa-solid fa-compass"></i> <span id="focus-text">Focus</span>
+                                </button>
+                                <div id="focus-menu" class="dropdown-menu">
+                                    <div class="menu-item active" data-focus="all"><i class="fa-solid fa-globe"></i> All</div>
+                                    <div class="menu-item" data-focus="academic"><i class="fa-solid fa-graduation-cap"></i> Academic</div>
+                                    <div class="menu-item" data-focus="writing"><i class="fa-solid fa-pen-nib"></i> Writing</div>
+                                    <div class="menu-item" data-focus="social"><i class="fa-brands fa-reddit-alien"></i> Social</div>
+                                </div>
+                            </div>
+
+                            <button class="action-btn badge-btn"><i class="fa-solid fa-desktop"></i> Computer <i class="fa-solid fa-plus"></i></button>
+                        </div>
+                        <div class="right-actions">
+                            <div class="dropdown-wrapper">
+                                <div id="model-dropdown" class="dropdown">Gemini 2.5 Flash <i class="fa-solid fa-chevron-down ml-1"></i></div>
+                                <div id="model-menu" class="dropdown-menu right">
+                                    <div class="menu-item active" data-model="gemini-2.5-flash">Gemini 2.5 Flash</div>
+                                    <div class="menu-item" data-model="gemini-1.5-pro">Gemini 1.5 Pro</div>
+                                </div>
+                            </div>
+                            <button class="action-btn icon-btn voice-btn"><i class="fa-solid fa-microphone"></i></button>
+                            <button id="send-btn" class="action-btn icon-btn send-btn"><i class="fa-solid fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="try-computer-section">
+                    <div class="section-header">
+                        <i class="fa-solid fa-desktop"></i> Try Computer
+                    </div>
+                    
+                    <div class="tabs">
+                        <button class="tab active" data-tab="learn"><i class="fa-regular fa-lightbulb"></i> Help me learn</button>
+                        <button class="tab" data-tab="monitor"><i class="fa-regular fa-eye"></i> Monitor</button>
+                        <button class="tab" data-tab="prototype"><i class="fa-solid fa-code"></i> Prototype</button>
+                        <button class="tab" data-tab="organize"><i class="fa-solid fa-list-ul"></i> Organize</button>
+                    </div>
+                    
+                    <ul id="suggestion-list" class="suggestion-list">
+                        <!-- Populated by JS -->
+                    </ul>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script_v2.js"></script>
+</body>
+</html>
