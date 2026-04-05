@@ -1,0 +1,222 @@
+/**
+ * confidence.css
+ * Styles for the Answer Confidence Score feature.
+ */
+
+.confidence-wrapper {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 8px;
+}
+
+.confidence-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1.5px solid var(--badge-color, #888888);
+    background: transparent;
+    color: var(--badge-color, #888888);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.15s ease;
+}
+
+.confidence-badge:hover {
+    background: rgba(0, 0, 0, 0.06);
+}
+
+.confidence-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--badge-color, #888888);
+}
+
+.confidence-icon {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+.source-breakdown {
+    margin-top: 12px;
+    padding: 16px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    background: #fafafa;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-6px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
+.breakdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+}
+
+.breakdown-level {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+}
+
+.breakdown-close {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #666;
+    line-height: 1;
+}
+
+.breakdown-explanation {
+    font-size: 13px;
+    color: #555;
+    margin: 0 0 14px;
+    line-height: 1.5;
+}
+
+.breakdown-stats {
+    display: flex;
+    gap: 16px;
+    padding: 10px 0;
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 12px;
+}
+
+.stat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-num {
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a2e;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.conflict-warning {
+    background: #fff8e1;
+    border: 1px solid #ffc107;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    color: #7a5c00;
+    margin-bottom: 12px;
+}
+
+.source-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 14px;
+}
+
+.source-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+}
+
+.source-favicon {
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.source-domain {
+    flex: 1;
+    color: #1a1a2e;
+    text-decoration: none;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.source-domain:hover {
+    text-decoration: underline;
+}
+
+.source-type-badge {
+    font-size: 10px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    border: 1px solid;
+    flex-shrink: 0;
+}
+
+.audit-btn {
+    width: 100%;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: #333;
+    transition: background 0.15s;
+}
+
+.audit-btn:hover {
+    background: #f0f0f0;
+}
+
+@media (max-width: 480px) {
+    .breakdown-stats {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .confidence-badge {
+        font-size: 11px;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    .source-breakdown {
+        background: #1e1e2e;
+        border-color: #333;
+    }
+    .breakdown-explanation {
+        color: #bbb;
+    }
+    .stat-num {
+        color: #fff;
+    }
+    .audit-btn {
+        background: #2d2d50;
+        color: #eee;
+        border-color: #444;
+    }
+    .source-domain {
+        color: #ddd;
+    }
+}
